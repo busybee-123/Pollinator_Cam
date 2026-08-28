@@ -1,1 +1,1 @@
-First provisional look at the code for this project. Very vibe-y right now and will change a lot over the coming 2 weeks!
+Code for RWGQ8 MSc dissertation on pollinator monitoring at the Natural History Museum.
