@@ -1,0 +1,40 @@
+Supercategory,Category for AI training,Category for GBIF download,Taxon level,Taxon (Latin name),GBIF Taxon ID,Number needed (Observed),Number needed (Preserved),Exception level,Exception taxa,Exception IDs,Data source (wild)
+Hymenoptera,Ant,Ant,Family,Formicidae,4342,0,30,,,,Insect Detect dataset
+Flies and hoverflies,Aphid-eater hoverfly,Eupeodes,Genus,Eupeodes,1540675,0,15,,,,Insect Detect dataset
+Flies and hoverflies,Aphid-eater hoverfly,Scaeva,Genus,Scaeva,1537685,0,15,,,,Insect Detect dataset
+Flies and hoverflies,Batman hoverfly,Batman hoverfly,Species,Myathropa florea,4516754,0,30,,,,Insect Detect dataset
+Other arthropods,Beetle,Beetle,Order,Coleoptera,1470,0,30,,,,Insect Detect dataset
+Hymenoptera,Common wasp,Vespula vulgaris,Species,Vespula vulgaris,1311671,0,15,,,,Insect Detect dataset
+Hymenoptera,Common wasp,Polistes dominula,Species,Polistes dominula,5871389,0,15,,,,Insect Detect dataset
+Flies and hoverflies,Drone fly,Drone fly,Genus,Eristalis,1491190,0,30,,,,Insect Detect dataset
+Hymenoptera,Flower bee,Flower bee,Genus,Anthophora,1337506,70,30,,,,iNaturalist
+Hymenoptera,Ginger-yellow bumblebee,Bombus pascuorum,Species,Bombus pascuorum,1340405,35,15,,,,iNaturalist
+Hymenoptera,Ginger-yellow bumblebee,Bombus humilis,Species,Bombus humilis,1340523,35,15,,,,iNaturalist
+Flies and hoverflies,Globetail hoverfly,Globetail hoverfly,Genus,Sphaerophoria,1539106,0,30,,,,Insect Detect dataset
+Hymenoptera,Honeybee,Honeybee,Species,Apis mellifera,1341976,0,30,,,,Insect Detect dataset
+Flies and hoverflies,Humming Syrphus,Humming Syrphus,Genus,Syrphus,1444606,0,30,,,,Insect Detect dataset
+Moths and butterflies,Large white,Large white,Species,Pieris brassicae,1920506,70,30,,,,iNaturalist
+Hymenoptera,Leafcutter bee,Leafcutter bee,Genus,Megachile,1335011,70,30,,,,iNaturalist
+Flies and hoverflies,Marmalade hoverfly,Marmalade hoverfly,Species,Episyrphus balteatus,1536449,0,30,,,,Insect Detect dataset
+Hymenoptera,Mason bee,Mason bee,Species,Osmia bicornis,5039315,70,30,,,,iNaturalist
+Moths and butterflies,Mint moth,Mint moth,Species,Pyrausta aurata,1890534,70,30,,,,iNaturalist
+Flies and hoverflies,Narcissus bulb fly,Narcissus bulb fly,Species,Merodon equestris,1544340,70,30,,,,iNaturalist
+Hymenoptera,Orange-tailed mining bee,Orange-tailed mining bee,Species,Andrena haemorrhoa,1356981,70,30,,,,iNaturalist
+Other arthropods,Other arthropods,Other arthropods,Phylum,Arthropoda,54,0,30,Order,"Diptera,Lepidoptera,Coleoptera,Hymenoptera","692,079,714,701,457",Insect Detect dataset
+Flies and hoverflies,Other fly,Other fly,Order,Diptera except Syrphidae,811,0,30,Family,Syrphidae,6920,Insect Detect dataset
+Moths and butterflies,Other moth or butterfly,Other moth or butterfly,Order,Other Lepidoptera,797,70,30,Species,"Pieris brassicae,Pyrausta aurata,Pieris rapae,Pararge aegeria","1920506,1890534,1920496,8049830",iNaturalist
+Hymenoptera,Red-tailed bumblebee,Bombus lapidarius,Species,Bombus lapidarius,1340301,24,10,,,,iNaturalist
+Hymenoptera,Red-tailed bumblebee,Bombus pratorum,Species,Bombus pratorum,1340305,23,10,,,,iNaturalist
+Hymenoptera,Red-tailed bumblebee,Bombus sylvarum,Species,Bombus sylvarum,1340342,23,10,,,,iNaturalist
+Hymenoptera,Small scissor bee,Small scissor bee,Genus,Chelostoma campanularum,1334499,70,30,,,,iNaturalist
+Moths and butterflies,Small white,Small white,Species,Pieris rapae,1920496,70,30,,,,iNaturalist
+Moths and butterflies,Speckled wood,Speckled wood,Species,Pararge aegeria,8049830,70,30,,,,iNaturalist
+Hymenoptera,Sweat bee,Sweat bee,Genus,Lasioglossium,1353501,70,30,,,,iNaturalist
+Flies and hoverflies,Thick-legged hoverfly,Thick-legged hoverfly,Species,Syritta pipiens,1544431,70,30,,,,iNaturalist
+Hymenoptera,White-tailed bumblebee,Bombus terrestris,Species,Bombus terrestris,1340503,14,6,,,,iNaturalist
+Hymenoptera,White-tailed bumblebee,Bombus lucorum,Species,Bombus lucorum,1340298,14,6,,,,iNaturalist
+Hymenoptera,White-tailed bumblebee,Bombus hypnorum,Species,Bombus hypnorum,1340513,14,6,,,,iNaturalist
+Hymenoptera,White-tailed bumblebee,Bombus hortorum,Species,Bombus hortorum,1340542,14,6,,,,iNaturalist
+Hymenoptera,White-tailed bumblebee,Bombus vestalis,Species,Bombus vestalis,1340418,14,6,,,,iNaturalist
+Hymenoptera,Wool carder bee,Wool carder bee,Genus,Anthidium manicatum,1334821,70,30,,,,iNaturalist
+Hymenoptera,Yellow-faced bee,Yellow-faced bee,Genus,Hylaeus,1349360,70,30,,,,iNaturalist
