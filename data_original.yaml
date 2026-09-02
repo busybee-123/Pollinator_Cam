@@ -1,0 +1,38 @@
+
+path: /content/drive/MyDrive/Colab Notebooks/Pollinator Camera Project/synthetic_combined_dataset_v3
+train: images/train  # Train images relative to 'path'
+val: images/val      # Val images relative to 'path'
+test: images/test    # Test images relative to 'path'
+
+nc: 30
+names:
+  0: Ant
+  1: Aphid_eater_hoverfly
+  2: Batman_hoverfly
+  3: Beetle
+  4: Common_wasp
+  5: Drone_fly
+  6: Flower_bee
+  7: Ginger_yellow_bumblebee
+  8: Globetail_hoverfly
+  9: Honeybee
+  10: Humming_Syrphus
+  11: Large_white
+  12: Leafcutter_bee
+  13: Marmalade_hoverfly
+  14: Mason_bee
+  15: Mint_moth
+  16: Narcissus_bulb_fly
+  17: Orange_tailed_mining_bee
+  18: Other_arthropods
+  19: Other_fly
+  20: Other_moth_or_butterfly
+  21: Red_tailed_bumblebee
+  22: Small_scissor_bee
+  23: Small_white
+  24: Speckled_wood
+  25: Sweat_bee
+  26: Thick_legged_hoverfly
+  27: White_tailed_bumblebee
+  28: Wool_carder_bee
+  29: Yellow_faced_bee

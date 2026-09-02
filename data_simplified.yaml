@@ -1,0 +1,10 @@
+names:
+  0: Bees, flies, and wasps
+  1: Other arthropods
+  2: Bumblebees and lookalikes
+  3: Butterflies and moths
+nc: 4
+path: /content/dataset
+test: /content/dataset/images/test
+train: /content/dataset/images/train
+val: /content/dataset/images/val
