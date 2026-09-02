@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="60">
+    <title>Pollinator Crop Monitor</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #f59e0b;
+            --text-color: #f8fafc;
+            --subtext-color: #94a3b8;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 2rem;
+        }
+
+        header {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 1rem;
+        }
+
+        /* --- FLAVOUR TEXT SECTION (EDITABLE) --- */
+        .flavour-text {
+            background-color: var(--card-bg);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            margin-bottom: 2rem;
+        }
+
+        .flavour-text h2 {
+            margin-top: 0;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .flavour-text p {
+            margin: 0.5rem 0 0 0;
+            color: var(--subtext-color);
+            line-height: 1.5;
+        }
+
+        /* --- GRID STYLING --- */
+        .section-title {
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .crop-card {
+            position: relative;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #334155;
+        }
+
+        .crop-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .crop-info {
+            padding: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--subtext-color);
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .pin-btn {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            background: rgba(15, 23, 42, 0.75);
+            border: none;
+            color: #fff;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            backdrop-filter: blur(2px);
+            transition: transform 0.1s ease;
+        }
+
+        .pin-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .pinned .pin-btn {
+            background: var(--accent-color);
+            color: #000;
+        }
+
+        .empty-msg {
+            color: var(--subtext-color);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Pollinator Crop Monitor</h1>
+        <small style="color: var(--subtext-color);">Active Run: {{ folder }}</small>
+    </header>
+
+    <!-- CUSTOMIZABLE FLAVOUR TEXT -->
+    <div class="flavour-text">
+        <h2>System Status & Notes</h2>
+        <p>Welcome to the live monitoring dashboard. Displaying up to 200 recent target crops dynamically retrieved from the cluster pipeline. Highlighted targets can be pinned for quick analysis. Auto-refreshing every 60 seconds.</p>
+    </div>
+
+    <!-- PINNED CROPS SECTION -->
+    <div class="section-title">📌 Pinned Crops (Max 5)</div>
+    <div class="grid" id="pinned-grid">
+        {% if pinned %}
+            {% for file in pinned %}
+            <div class="crop-card pinned">
+                <button class="pin-btn" onclick="togglePin('{{ file }}')" title="Unpin">★</button>
+                <a href="/media/{{ file }}" target="_blank">
+                    <img src="/media/{{ file }}" alt="Pinned Crop" loading="lazy">
+                </a>
+                <div class="crop-info" title="{{ file }}">{{ file.replace('EXAMPLE:', '').split('/')[-1] }}</div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p class="empty-msg">No crops pinned. Click the star icon on any image to pin it.</p>
+        {% endif %}
+    </div>
+
+    <!-- RECENT CROPS STREAM SECTION -->
+    <div class="section-title">🕒 Recent Stream (Latest 200)</div>
+    <div class="grid">
+        {% for file in recent %}
+        <div class="crop-card">
+            <button class="pin-btn" onclick="togglePin('{{ file }}')" title="Pin crop">☆</button>
+            <a href="/media/{{ file }}" target="_blank">
+                <img src="/media/{{ file }}" alt="Recent Crop" loading="lazy">
+            </a>
+            <div class="crop-info" title="{{ file }}">{{ file.split('/')[-1] }}</div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        async function togglePin(filepath) {
+            const pinnedCount = document.querySelectorAll('.pinned').length;
+            const isCurrentlyPinned = event.target.innerText === '★';
+
+            if (!isCurrentlyPinned && pinnedCount >= 5) {
+                alert("You can only pin up to 5 crops at a time. Please unpin one first.");
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/pin', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ filepath: filepath })
+                });
+
+                if (response.ok) {
+                    window.location.reload();
+                }
+            } catch (err) {
+                console.error("Failed to update pin state:", err);
+            }
+        }
+    </script>
+</body>
+</html>
