@@ -1,3 +1,5 @@
+# Code to run on HPC. Creates the backend for the web app, so that with the right SSH connection to port 32967, the web app can be viewed on a PC.
+
 import os
 import json
 from glob import glob
