@@ -10,4 +10,8 @@ The code up to and including step 3 (YOLO training) assumes that you run the not
 Some notebooks require subfolders to exist from previous steps.
 
 Re-creating the entire workflow would require a little tinkering, as there were undocumented manual quality control and reorganisation steps involved. This was a proof of concept project so not everything was designed to be replicable.
-Nevertheless, the available notebooks should show the main steps that I took. In particular, you can use it to see the exact hyperparameters and augmentations used in training the YOLO v11 model, and to explore the dataset of image crops that the camera captured.
+
+Nevertheless, the available notebooks should show the main steps that I took.
+
+## Recommended way to use this repo
+This repo can show the exact hyperparameters and augmentations used in training the YOLO v11 model, and the dataset of image crops that the camera captured.
