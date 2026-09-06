@@ -7,7 +7,7 @@ from flask import Flask, render_template, send_from_directory, request, jsonify
 
 app = Flask(__name__)
 
-# Set your exact target directory here
+# Set target directory here. Folder is static not dynamic - I updated it manually once a week if needed.
 CROPS_BASE_DIR = "/hpc/groups/pollinator-monitoring/runs/detect/run_2026-08-17_17-37-03/crops_2026-08-17_17-37-03"
 PINNED_FILE = "pinned.json"
 
