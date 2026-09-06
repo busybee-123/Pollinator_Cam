@@ -40,7 +40,7 @@ def index():
     # Filter out pinned items from recent stream
     recent = [f for f in relative_files if f not in pinned][:100]
     
-    return render_template("index.html", recent=recent, pinned=pinned, folder=os.path.basename(CROPS_BASE_DIR))
+    return render_template("web_app_webpage.html", recent=recent, pinned=pinned, folder=os.path.basename(CROPS_BASE_DIR))
 
 # CRITICAL FIX: Restored <path:filename> parameter
 @app.route("/media/<path:filename>")
